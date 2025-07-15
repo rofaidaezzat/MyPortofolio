@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Contact = () => (
   <section id="contact" className="py-20 px-4 max-w-2xl mx-auto text-center">
     <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>

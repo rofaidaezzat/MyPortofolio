@@ -33,10 +33,7 @@ const Index = () => {
       <StarBackground />
       <Navbar />
       {/* Hero Section */}
-      <section
-        className="flex flex-col justify-center items-center py-32 px-4 relative overflow-hidden"
-        data-aos="fade-up"
-      >
+      <section className="flex flex-col justify-center items-center py-32 px-4 relative overflow-hidden">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}

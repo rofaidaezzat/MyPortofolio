@@ -1,7 +1,4 @@
-import { useEffect } from "react";
-// @ts-ignore
-import AOS from "aos";
-import "aos/dist/aos.css";
+import { useEffect, useRef } from "react";
 // @ts-ignore
 import Navbar from "../components/Navbar";
 // @ts-ignore
@@ -12,23 +9,31 @@ import Experience from "../components/Experience";
 import Projects from "../components/Projects";
 // @ts-ignore
 import Contact from "../components/Contact";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 // @ts-ignore
 import StarBackground from "../components/StarBackground";
 
 const Index = () => {
   useEffect(() => {
-    AOS.init({
-      duration: 800,
-      easing: "ease-in-out",
-      once: true, // Allow animation every time section enters viewport
-      offset: 80,
-    });
     // Force refresh after init to fix hidden content on first load
   }, []);
 
+  // Refs for each section
+  const aboutRef = useRef(null);
+  const skillsRef = useRef(null);
+  const experienceRef = useRef(null);
+  const projectsRef = useRef(null);
+  const contactRef = useRef(null);
+
+  // InView hooks
+  const aboutInView = useInView(aboutRef, { once: true, margin: "-100px" });
+  const skillsInView = useInView(skillsRef, { once: true, margin: "-100px" });
+  const experienceInView = useInView(experienceRef, { once: true, margin: "-100px" });
+  const projectsInView = useInView(projectsRef, { once: true, margin: "-100px" });
+  const contactInView = useInView(contactRef, { once: true, margin: "-100px" });
+
   return (
-    <div className="bg-gray-900 min-h-screen text-white font-sans relative">
+    <div className="bg-gray-900 min-h-screen text-white font-sans relative overflow-x-hidden">
       {/* ✅ النجوم الخلفية */}
       <StarBackground />
       <Navbar />
@@ -58,35 +63,54 @@ const Index = () => {
         </motion.div>
       </section>
       {/* About Section */}
-      <section
+      <motion.section
+        ref={aboutRef}
+        initial={{ opacity: 0, y: 60 }}
+        animate={aboutInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.7, ease: "easeOut" }}
         id="about"
         className="py-20 px-4 max-w-4xl mx-auto"
-        data-aos="fade-right"
       >
         <h2 className="text-3xl font-bold mb-6">About Me</h2>
         <p className="text-lg text-gray-300 mb-4">
-          I believe in a user centered design approach, ensuring that every
-          project I work on is tailored to meet the specific needs of its users.
+          I believe in a user centered design approach, ensuring that every project I work on is tailored to meet the specific needs of its users.
         </p>
         <p className="text-gray-400">
-          I'm a frontend web developer dedicated to turning ideas into creative
-          solutions. I specialize in creating seamless and intuitive user
-          experiences. My approach focuses on creating scalable, high-performing
-          solutions tailored to both user needs and business objectives.
+          I'm a frontend web developer dedicated to turning ideas into creative solutions. I specialize in creating seamless and intuitive user experiences. My approach focuses on creating scalable, high-performing solutions tailored to both user needs and business objectives.
         </p>
-      </section>
-      <div data-aos="fade-up">
+      </motion.section>
+      <motion.div
+        ref={skillsRef}
+        initial={{ opacity: 0, y: 60 }}
+        animate={skillsInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+      >
         <Skills />
-      </div>
-      <div data-aos="fade-left">
+      </motion.div>
+      <motion.div
+        ref={experienceRef}
+        initial={{ opacity: 0, y: 60 }}
+        animate={experienceInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+      >
         <Experience />
-      </div>
-      <div data-aos="zoom-in">
+      </motion.div>
+      <motion.div
+        ref={projectsRef}
+        initial={{ opacity: 0, y: 60 }}
+        animate={projectsInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
+      >
         <Projects />
-      </div>
-      <div data-aos="fade-up">
+      </motion.div>
+      <motion.div
+        ref={contactRef}
+        initial={{ opacity: 0, y: 60 }}
+        animate={contactInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
+      >
         <Contact />
-      </div>
+      </motion.div>
     </div>
   );
 };

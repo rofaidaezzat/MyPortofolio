@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Remove vertical scroll from all elements except html/body */
+*:not(html):not(body) {
+  overflow-y: unset !important;
+}

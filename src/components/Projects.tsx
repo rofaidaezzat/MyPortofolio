@@ -1,58 +1,172 @@
-const projects = [
+import React from "react";
+
+interface ProjectType {
+  name: string;
+  stack: string[];
+  url?: string;
+  dashboard?: string;
+  github?: string;
+  description: string;
+  featured?: boolean;
+  category: string;
+}
+
+const PROJECTS_DATA: ProjectType[] = [
   {
-    name: 'MTI Electronics',
-    stack: ['Next.js', 'Payload CMS', 'Tailwind CSS'],
-    img: '',
+    name: "CodeMap – AI-Powered Learning Platform",
+    stack: [
+      "React",
+      "Next.js",
+      "Redux Toolkit",
+      "Firebase Auth",
+      "Gemini AI",
+      "React Query",
+      "Tailwind CSS",
+      "Framer Motion",
+    ],
+    url: "https://codemap-ai.vercel.app",
+    dashboard: "https://codemap-dashboard.vercel.app",
+    github: "https://github.com/rofaidaezzat/CodeMap-Dashboard",
+    description:
+      "Built admin panel with Next.js, Redux Toolkit, Tailwind CSS, and Framer Motion. Features include form validation, user roles, grading, and notifications. User side uses Firebase Auth, React Query, and Gemini LLM chatbot for learning recommendations.",
+    featured: true,
+    category: "team",
   },
   {
-    name: 'Epikcart',
-    stack: ['React', 'Redux', 'React i18n'],
-    img: '',
+    name: "System Management Platform",
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "MongoDB",
+      "Prisma",
+      "shadcn/ui",
+      "Clerk",
+      "Zod",
+    ],
+    url: "https://full-stack-todo-app-sigma.vercel.app",
+    github: "https://github.com/rofaidaezzat/System-Management",
+    description:
+      "Full-stack web app for managing users and workflows. Includes Clerk authentication, Zod validation, and a responsive UI.",
+    category: "solo",
   },
   {
-    name: 'Resume Roaster',
-    stack: ['GPT-4', 'Next.js', 'Postgresql'],
-    img: '',
+    name: "Fitness Training Website",
+    stack: ["React", "Supabase Auth", "Axios", "React Query", "Framer Motion"],
+    url: "https://exercise-fitness-website.vercel.app",
+    description:
+      "Responsive fitness platform showing exercises by muscle group. Includes animated UI, icons, and toast notifications.",
+    category: "team",
   },
   {
-    name: 'Real Estate',
-    stack: ['React.js', 'Redux', 'Tailwind CSS'],
-    img: '',
+    name: "VS Code Clone",
+    stack: [
+      "React",
+      "TypeScript",
+      "Redux Toolkit",
+      "React Syntax Highlighter",
+      "Match Sorter",
+      "Resizable Panels",
+    ],
+    url: "https://vs-code-clone-mauve.vercel.app",
+    github: "https://github.com/rofaidaezzat/VSCode-Clone",
+    description:
+      "Visual Studio Code clone with panel resizing, code highlighting, and file search functionality.",
+    category: "solo",
   },
   {
-    name: 'Consulting Finance',
-    stack: ['HTML', 'CSS & SCSS', 'Javascript'],
-    img: '',
+    name: "Taw3ya – Islamic Awareness Platform",
+    stack: ["React.js", "Tailwind CSS"],
+    github: "https://github.com/rofaidaezzat/Taw3ya",
+    description:
+      "Freelance contribution to the 'Monotheism' page. Focused on front-end implementation and responsiveness.",
+    category: "freelance",
   },
   {
-    name: 'devLinks',
-    stack: ['Formik', 'Drag & Drop'],
-    img: '',
+    name: "Modern Wear – Product Dashboard",
+    stack: ["React", "TypeScript", "Tailwind CSS", "Redux Toolkit"],
+    url: "https://modern-wear-chi.vercel.app",
+    description:
+      "Built a fully functional product dashboard with CRUD operations, product filtering, and reusable components.",
+    category: "solo",
+  },
+  {
+    name: "E-Commerce – Formal Wear Shop",
+    stack: [
+      "React 19",
+      "Vite",
+      "Chakra UI",
+      "Redux Toolkit",
+      "RTK Query",
+      "Framer Motion",
+    ],
+    url: "https://e-commerceappuser.netlify.app",
+    description:
+      "Modern, responsive e-commerce site with product filtering, cart features, and smooth UI animations. Backend migration to Supabase is in progress.",
+    category: "solo",
   },
 ];
 
-const Projects = () => (
-  <section id="projects" className="py-20 px-4 max-w-5xl mx-auto">
-    <h2 className="text-3xl font-bold mb-10">Selected Projects</h2>
-    <div className="space-y-8">
-      {projects.map((project, idx) => (
-        <div key={project.name} className="flex flex-col md:flex-row md:items-center gap-6 border-b border-gray-800 pb-6">
-          <div className="flex-1">
-            <div className="text-2xl font-extrabold text-white mb-1">{String(idx + 1).padStart(2, '0')}. {project.name}</div>
-            <div className="flex flex-wrap gap-2 text-sm text-gray-400 mb-2">
+const Projects: React.FC = () => {
+  return (
+    <section id="projects" className="py-20 px-4 max-w-4xl mx-auto">
+      <h2 className="text-3xl font-bold mb-10 text-white">Projects</h2>
+      <div className="space-y-8">
+        {PROJECTS_DATA.map((project) => (
+          <div
+            key={project.name}
+            className="bg-gray-800 p-6 rounded-xl shadow-md border border-gray-700"
+          >
+            <h3 className="text-xl font-semibold text-green-400">
+              {project.name}
+            </h3>
+            <p className="text-gray-300 text-sm mt-2">{project.description}</p>
+
+            <div className="flex flex-wrap gap-2 mt-3">
               {project.stack.map((tech) => (
-                <span key={tech} className="bg-gray-800 px-2 py-1 rounded">{tech}</span>
+                <span
+                  key={tech}
+                  className="bg-green-600 text-white text-xs px-2 py-1 rounded-md"
+                >
+                  {tech}
+                </span>
               ))}
             </div>
-          </div>
-          <div className="w-40 h-24 bg-gray-700 rounded-lg flex items-center justify-center text-gray-500">
-            {/* Placeholder for project image */}
-            <span>Preview</span>
-          </div>
-        </div>
-      ))}
-    </div>
-  </section>
-);
 
-export default Projects; 
+            <div className="flex gap-4 mt-4 flex-wrap">
+              {project.url && (
+                <a
+                  href={project.url}
+                  target="_blank"
+                  className="text-sm text-white bg-green-600 hover:bg-green-700 px-3 py-1.5 rounded-md"
+                >
+                  🔗 Live
+                </a>
+              )}
+              {project.dashboard && (
+                <a
+                  href={project.dashboard}
+                  target="_blank"
+                  className="text-sm text-white bg-gray-700 hover:bg-gray-600 px-3 py-1.5 rounded-md"
+                >
+                  📊 Dashboard
+                </a>
+              )}
+              {project.github && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  className="text-sm text-green-400 hover:underline px-3 py-1.5"
+                >
+                  🐙 GitHub
+                </a>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default Projects;

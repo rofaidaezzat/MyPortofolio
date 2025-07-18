@@ -28,8 +28,14 @@ const Index = () => {
   // InView hooks
   const aboutInView = useInView(aboutRef, { once: true, margin: "-100px" });
   const skillsInView = useInView(skillsRef, { once: true, margin: "-100px" });
-  const experienceInView = useInView(experienceRef, { once: true, margin: "-100px" });
-  const projectsInView = useInView(projectsRef, { once: true, margin: "-100px" });
+  const experienceInView = useInView(experienceRef, {
+    once: true,
+    margin: "-100px",
+  });
+  const projectsInView = useInView(projectsRef, {
+    once: true,
+    margin: "-100px",
+  });
   const contactInView = useInView(contactRef, { once: true, margin: "-100px" });
 
   return (
@@ -50,9 +56,15 @@ const Index = () => {
             <span className="block text-gray-100">DEVELOPER</span>
           </h1>
           <p className="mb-8 text-lg md:text-xl text-gray-300 max-w-xl mx-auto">
-            Hi! I'm <span className="font-bold text-white">Your Name</span>. A
-            creative Frontend Developer with 3+ years of experience in building
-            high-performance, scalable, and responsive web solutions.
+            I'm <span className="font-bold text-white">Rofaida Azzat</span>, a
+            motivated Computer Science major at Alexandria University (Class of
+            2025) with a CGPA of 3.62. I specialize in frontend development, and
+            I’m passionate about transforming creative ideas into modern,
+            responsive, and user-friendly web applications. I’m proficient in
+            technologies like HTML, CSS, JavaScript, TypeScript, React, Next.js,
+            Tailwind CSS, and experienced with MongoDB, Git, and Agile
+            methodologies. I enjoy collaborating in team environments and
+            continuously learning to deliver clean and efficient code.
           </p>
           <a
             href="#contact"
@@ -71,13 +83,15 @@ const Index = () => {
         id="about"
         className="py-20 px-4 max-w-4xl mx-auto"
       >
-        <h2 className="text-3xl font-bold mb-6">About Me</h2>
-        <p className="text-lg text-gray-300 mb-4">
-          I believe in a user centered design approach, ensuring that every project I work on is tailored to meet the specific needs of its users.
-        </p>
-        <p className="text-gray-400">
-          I'm a frontend web developer dedicated to turning ideas into creative solutions. I specialize in creating seamless and intuitive user experiences. My approach focuses on creating scalable, high-performing solutions tailored to both user needs and business objectives.
-        </p>
+        <h2 className="text-3xl font-bold mb-6">About Me</h2>I believe in a
+        user-centered design approach, ensuring every project is tailored to
+        meet real user needs while delivering a seamless and accessible
+        experience. I'm a frontend web developer with a strong foundation in
+        software engineering and a passion for crafting responsive, scalable,
+        and intuitive interfaces. I thrive on transforming complex problems into
+        elegant and efficient solutions, aligning user expectations with
+        business goals through clean code, thoughtful design, and modern web
+        technologies.
       </motion.section>
       <motion.div
         ref={skillsRef}

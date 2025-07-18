@@ -1,28 +1,30 @@
+import { useCallback } from "react";
 import Particles from "react-particles";
 import { loadStarsPreset } from "tsparticles-preset-stars";
-import { useCallback } from "react";
+
+const PARTICLES_CONFIG = {
+  preset: "stars",
+  background: {
+    color: {
+      value: "transparent",
+    },
+  },
+  fullScreen: {
+    enable: true,
+    zIndex: 0,
+  },
+};
 
 const StarBackground = () => {
-  const customInit = useCallback(async (engine: any) => {
+  const initializeParticles = useCallback(async (engine: any) => {
     await loadStarsPreset(engine);
   }, []);
 
   return (
     <Particles
       id="tsparticles"
-      init={customInit}
-      options={{
-        preset: "stars",
-        background: {
-          color: {
-            value: "transparent",
-          },
-        },
-        fullScreen: {
-          enable: true,
-          zIndex: 0,
-        },
-      }}
+      init={initializeParticles}
+      options={PARTICLES_CONFIG}
     />
   );
 };

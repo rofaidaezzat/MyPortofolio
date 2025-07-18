@@ -24,9 +24,9 @@ const PROJECTS_DATA: ProjectType[] = [
       "Tailwind CSS",
       "Framer Motion",
     ],
-    url: "https://codemap-ai.vercel.app",
-    dashboard: "https://codemap-dashboard.vercel.app",
-    github: "https://github.com/rofaidaezzat/CodeMap-Dashboard",
+    url: "https://codemapuser.netlify.app/",
+    dashboard: "https://dashboard-roadmap.netlify.app/authpage",
+    github: "https://github.com/rofaidaezzat/CodeMap",
     description:
       "Built admin panel with Next.js, Redux Toolkit, Tailwind CSS, and Framer Motion. Features include form validation, user roles, grading, and notifications. User side uses Firebase Auth, React Query, and Gemini LLM chatbot for learning recommendations.",
     featured: true,
@@ -44,8 +44,8 @@ const PROJECTS_DATA: ProjectType[] = [
       "Clerk",
       "Zod",
     ],
-    url: "https://full-stack-todo-app-sigma.vercel.app",
-    github: "https://github.com/rofaidaezzat/System-Management",
+    url: "https://full-stack-todo-app-sigma.vercel.app/sign-in?redirect_url=https%3A%2F%2Ffull-stack-todo-app-sigma.vercel.app%2F",
+    github: "https://github.com/rofaidaezzat/full-stack-todo-App",
     description:
       "Full-stack web app for managing users and workflows. Includes Clerk authentication, Zod validation, and a responsive UI.",
     category: "solo",
@@ -53,7 +53,8 @@ const PROJECTS_DATA: ProjectType[] = [
   {
     name: "Fitness Training Website",
     stack: ["React", "Supabase Auth", "Axios", "React Query", "Framer Motion"],
-    url: "https://exercise-fitness-website.vercel.app",
+    url: "https://exercise-fitness-website.vercel.app/",
+    github: "https://github.com/rofaidaezzat/Exercise-fitness-website",
     description:
       "Responsive fitness platform showing exercises by muscle group. Includes animated UI, icons, and toast notifications.",
     category: "team",
@@ -68,16 +69,15 @@ const PROJECTS_DATA: ProjectType[] = [
       "Match Sorter",
       "Resizable Panels",
     ],
-    url: "https://vs-code-clone-mauve.vercel.app",
-    github: "https://github.com/rofaidaezzat/VSCode-Clone",
+    url: "https://vs-code-clone-mauve.vercel.app/",
+    github: "https://github.com/rofaidaezzat/VS_Code_Clone",
     description:
       "Visual Studio Code clone with panel resizing, code highlighting, and file search functionality.",
     category: "solo",
   },
   {
     name: "Taw3ya – Islamic Awareness Platform",
-    stack: ["React.js", "Tailwind CSS"],
-    github: "https://github.com/rofaidaezzat/Taw3ya",
+    stack: ["Next.js", "Tailwind CSS"],
     description:
       "Freelance contribution to the 'Monotheism' page. Focused on front-end implementation and responsiveness.",
     category: "freelance",
@@ -85,7 +85,8 @@ const PROJECTS_DATA: ProjectType[] = [
   {
     name: "Modern Wear – Product Dashboard",
     stack: ["React", "TypeScript", "Tailwind CSS", "Redux Toolkit"],
-    url: "https://modern-wear-chi.vercel.app",
+    url: "https://modern-wear-chi.vercel.app/",
+    github: "https://github.com/rofaidaezzat/ModernWear",
     description:
       "Built a fully functional product dashboard with CRUD operations, product filtering, and reusable components.",
     category: "solo",
@@ -100,7 +101,8 @@ const PROJECTS_DATA: ProjectType[] = [
       "RTK Query",
       "Framer Motion",
     ],
-    url: "https://e-commerceappuser.netlify.app",
+    url: "https://e-commerceappuser.netlify.app/",
+    github: "https://github.com/rofaidaezzat/E-Commerce",
     description:
       "Modern, responsive e-commerce site with product filtering, cart features, and smooth UI animations. Backend migration to Supabase is in progress.",
     category: "solo",
